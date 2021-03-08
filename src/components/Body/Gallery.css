@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+.gallery {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.card {
+  position: absolute;
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  background-color: black;
+  box-shadow: 0px 18px 63px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.card img {
+  max-width: 100%;
+  padding: 20px;
+}
+
+.photo-name {
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  font-size: 40px;
+  margin-left: 15px;
+}

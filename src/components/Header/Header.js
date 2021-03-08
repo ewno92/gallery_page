@@ -11,19 +11,19 @@ const Header = () => {
       {/* <AccountCircle /> */}
       {/* <AccountCircleIcon /> */}
       <IconButton>
-        <a href="#">
+        <a href="https://google.com">
           <AccountCircleIcon fontSize="Large" />
         </a>
       </IconButton>
 
       <div className="">
-        <a href="#">
+        <a href="https://google.com">
           <img className="header_logo" src={logo} alt="photo" />
         </a>
       </div>
 
       <IconButton>
-        <a href="#">
+        <a href="https://google.com">
           <MenuIcon fontSize="large" />
         </a>
       </IconButton>
