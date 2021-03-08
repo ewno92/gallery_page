@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  background-color: #f0edcc;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  height: 80px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #02343f;
+}
+
+.logo {
+  font-size: 40px;
+  /* padding: 5px; */
+  border: 3px solid #02343f;
+  border-radius: 5px;
+}
