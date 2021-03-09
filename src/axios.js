@@ -1,7 +1,11 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: "https://localhost:8000",
-  timeout: 1000,
+  baseURL: "http://localhost:5000",
+  withCredentials: false,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+  },
 });
 
 export default instance;

@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
 import "./../style/Gallery.css";
+import axios from "./../../axios";
+
 const Gallery = () => {
-  const [photos, setPhotos] = useState([
-    {
-      name: "firstPerson",
-      url:
-        "https://www.biography.com/.image/c_fill%2Ccs_srgb%2Cfl_progressive%2Ch_400%2Cq_auto:good%2Cw_620/MTE4MDAzNDEwMzY0NDMzOTM0/jessica-alba-299896-1-402.jpg",
-    },
-    {
-      name: "SecondPerson",
-      url:
-        "https://c8.alamy.com/comp/P1KE01/photoshop-vector-icon-isolated-on-transparent-background-photoshop-logo-concept-P1KE01.jpg",
-    },
-  ]);
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const req = await axios.get("/gallery");
+      console.log("result:", req.data);
+      setPhotos(req.data);
+    }
+    fetchData();
+  }, []);
+
   const onSwipe = (direction) => {
     // console.log("You swiped: " + direction);
   };
@@ -34,10 +35,11 @@ const Gallery = () => {
           >
             <div
               className="img"
-              style={{ backgroundImage: `url(${photo.url})` }}
+              style={{ backgroundImage: `url(${photo.imgUrl})` }}
             >
               <span className="photo-name">{photo.name}</span>
             </div>
+            {console.log(`name ${photo.name} {photo.url}`)}
           </TinderCard>
         ))}
       </div>
